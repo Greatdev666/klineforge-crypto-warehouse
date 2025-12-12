@@ -25,8 +25,9 @@ jobs:
 
       - name: Create private key
         run: |
-          echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > private_key.p8
-          chmod 600 private_key.p8
+            printf "%s" "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > private_key.p8
+            chmod 600 private_key.p8
+
 
       - name: Run dbt deps
         run: dbt deps
