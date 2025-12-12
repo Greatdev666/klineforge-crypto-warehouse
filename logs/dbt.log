@@ -1,0 +1,76 @@
+[0m21:47:29.230182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CDBB8440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CBA6D590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CFEBFD90>]}
+
+
+============================== 21:47:29.237501 | fbe1237e-74ec-4b24-b126-dfe57d07d5d4 ==============================
+[0m21:47:29.237501 [info ] [MainThread]: Running with dbt=1.10.15
+[0m21:47:29.238678 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:47:29.276584 [info ] [MainThread]: dbt version: 1.10.15
+[0m21:47:29.277402 [info ] [MainThread]: python version: 3.13.5
+[0m21:47:29.278196 [info ] [MainThread]: python path: C:\Users\3D\anaconda3\python.exe
+[0m21:47:29.279441 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m21:47:29.280627 [info ] [MainThread]: Using profiles dir at .
+[0m21:47:29.281405 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m21:47:29.282094 [info ] [MainThread]: Using dbt_project.yml file at D:\USER\Documents\klineforge-crypto-warehouse\klineforge-crypto-warehouse\dbt_project.yml
+[0m21:47:29.282948 [info ] [MainThread]: Configuration:
+[0m21:47:29.283652 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m21:47:29.284330 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m21:47:29.285062 [info ] [MainThread]: Required dependencies:
+[0m21:47:29.285796 [debug] [MainThread]: Executing "git --help"
+[0m21:47:29.335799 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:47:29.336909 [debug] [MainThread]: STDERR: "b''"
+[0m21:47:29.337748 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:47:29.338896 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m21:47:29.339670 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m21:47:29.340345 [info ] [MainThread]: dbt looked for a profiles.yml file in .\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m21:47:29.341046 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <D:\USER\Documents\klineforge-crypto-warehouse\klineforge-crypto-warehouse\dbt_project.yml> not found
+
+[0m21:47:29.342096 [debug] [MainThread]: Command `dbt debug` failed at 21:47:29.341951 after 0.35 seconds
+[0m21:47:29.342486 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CFF54D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CFDDA0F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F0CED47570>]}
+[0m21:47:29.342878 [debug] [MainThread]: Flushing usage events
+[0m21:47:31.103342 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:48:08.818853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFCCE8440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFAB9D590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFEFDFD90>]}
+
+
+============================== 21:48:08.824218 | 474f7ad8-bb64-4ba0-9d90-7709482abf33 ==============================
+[0m21:48:08.824218 [info ] [MainThread]: Running with dbt=1.10.15
+[0m21:48:08.825593 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --profiles-dir .', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:48:08.850971 [info ] [MainThread]: dbt version: 1.10.15
+[0m21:48:08.851661 [info ] [MainThread]: python version: 3.13.5
+[0m21:48:08.852238 [info ] [MainThread]: python path: C:\Users\3D\anaconda3\python.exe
+[0m21:48:08.852746 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m21:48:08.853259 [info ] [MainThread]: Using profiles dir at .
+[0m21:48:08.853742 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m21:48:08.854208 [info ] [MainThread]: Using dbt_project.yml file at D:\USER\Documents\klineforge-crypto-warehouse\klineforge-crypto-warehouse\dbt_project.yml
+[0m21:48:08.854710 [info ] [MainThread]: Configuration:
+[0m21:48:08.855193 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m21:48:08.855713 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m21:48:08.856419 [info ] [MainThread]: Required dependencies:
+[0m21:48:08.857197 [debug] [MainThread]: Executing "git --help"
+[0m21:48:08.903287 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:48:08.903896 [debug] [MainThread]: STDERR: "b''"
+[0m21:48:08.904354 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:48:08.905031 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m21:48:08.905517 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m21:48:08.906097 [info ] [MainThread]: dbt looked for a profiles.yml file in .\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m21:48:08.906685 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <D:\USER\Documents\klineforge-crypto-warehouse\klineforge-crypto-warehouse\dbt_project.yml> not found
+
+[0m21:48:08.907731 [debug] [MainThread]: Command `dbt debug` failed at 21:48:08.907523 after 0.21 seconds
+[0m21:48:08.908582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFF074D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFEEFA0F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027BFDE67570>]}
+[0m21:48:08.909723 [debug] [MainThread]: Flushing usage events
+[0m21:48:10.525441 [debug] [MainThread]: An error was encountered while trying to flush usage events
