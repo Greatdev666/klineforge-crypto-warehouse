@@ -1,0 +1,27 @@
+ipeds_datawarehouse:
+  outputs:
+    dev:
+      dbname: IPEDSDataWarehouse
+      host: localhost
+      password: Adewale666
+      port: 5432
+      schema: Silver
+      threads: 4
+      type: postgres
+      user: postgres
+  target: dev
+klineforge_dbt:
+  outputs:
+    dev:
+      account: KKVJJZY-EE58658
+      database: CRYPTO_DWH
+      private_key_passphrase:
+      private_key_path: C:/Users/3D/rsa_key.p8
+      authenticator: "snowflake_jwt"
+      role: DEVELOPER_ROLE
+      schema: SILVER
+      threads: 1
+      type: snowflake
+      user: DELEXCODE
+      warehouse: WH_DEV
+  target: dev
