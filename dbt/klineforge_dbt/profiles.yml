@@ -20,7 +20,7 @@ klineforge_dbt:
       database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
       schema: "CI_{{ env_var('GITHUB_RUN_ID') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
-      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH') }}"
+      private_key_path: "private_key.p8"
       threads: 1
 
   target: dev
