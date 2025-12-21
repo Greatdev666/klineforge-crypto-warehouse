@@ -1,4 +1,4 @@
-with staged_table as(
+WITH staged_table AS(
     SELECT * FROM {{ source('bronze', 'kline') }}
 )
 
