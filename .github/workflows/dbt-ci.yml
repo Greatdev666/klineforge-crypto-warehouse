@@ -44,8 +44,5 @@ jobs:
             --target ci \
             --select state:modified+ \
             --defer \
-<<<<<<< HEAD
-            --state . 
-=======
-            --state . 
->>>>>>> b74bb2c4ef632b564ba95054417c937b9c235875
+            --state .
+
