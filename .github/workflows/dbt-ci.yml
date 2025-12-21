@@ -25,6 +25,7 @@ jobs:
 
       - name: Create private key
         run: |
+          cd dbt/klineforge_dbt
           printf "%s" "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > private_key.p8
           chmod 600 private_key.p8
 
