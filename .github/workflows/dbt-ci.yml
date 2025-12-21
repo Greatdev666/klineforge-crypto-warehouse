@@ -43,7 +43,5 @@ jobs:
         run: |
           cd dbt/klineforge_dbt
           dbt build \
-            --target ci \
-            --defer \
-            --state .
+            --target ci 
 
