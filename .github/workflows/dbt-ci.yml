@@ -44,7 +44,6 @@ jobs:
           cd dbt/klineforge_dbt
           dbt build \
             --target ci \
-            --select state:modified+ \
             --defer \
             --state .
 
