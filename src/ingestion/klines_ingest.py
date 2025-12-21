@@ -13,7 +13,7 @@ from snowflake.connector.pandas_tools import write_pandas
 from cryptography.hazmat.primitives import serialization
 
 # ======================
-# Config
+# Config .
 # ======================
 COINS = [
     "BTCUSDT", "ETHUSDT", "BNBUSDT", "ADAUSDT", "XRPUSDT",
