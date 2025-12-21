@@ -1,6 +1,6 @@
 # =====================================================
 # CRASH-SAFE, FAST, TRUE-INCREMENTAL BINANCE DAILY INGESTION
-# + LATE-DATA SAFE WITH CHECKPOINTS
+# + LATE-DATA SAFE WITH CHECKPOINTS ()
 # =====================================================
 
 import requests
