@@ -1,0 +1,304 @@
+version: 2
+
+models:
+  - name: stage_binance_klines
+    columns:
+      - name: coin
+        tests: 
+          - not_null
+
+      - name: open_timestamp
+        tests: 
+          - not_null
+
+      - name: close_timestamp
+        tests: 
+          - not_null
+
+      - name: ingestion_timestamp
+        tests: 
+          - not_null
+
+
+  - name: fact_1h_klines
+    description: >
+      Hourly OHLCV fact table for Binance spot klines.
+      One row per coin per 1-hour candle, deduplicated by latest ingestion.
+
+    columns:
+      - name: coin
+        description: Trading pair symbol (e.g. BTCUSDT)
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_coins')
+                field: coin
+
+      - name: open_timestamp
+        description: Candle open timestamp (UTC)
+        tests:
+          - not_null
+
+      - name: close_timestamp
+        description: Candle close timestamp (UTC)
+        tests:
+          - not_null
+
+      - name: ingestion_timestamp
+        description: Timestamp when the record was ingested
+        tests:
+          - not_null
+
+      - name: open_price
+        tests: [not_null]
+
+      - name: high_price
+        tests: [not_null]
+
+      - name: low_price
+        tests: [not_null]
+
+      - name: close_price
+        tests: [not_null]
+
+      - name: volume
+        tests:
+          - not_null
+
+      - name: quote_volume
+        tests:
+          - not_null
+
+      - name: count
+        tests:
+          - not_null
+
+    tests:
+      # Grain enforcement: one row per coin per hour
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - coin
+              - open_timestamp
+
+  - name: dim_coins
+    description: Dimension table containing coin metadata
+    columns:
+      - name: coin
+        tests:
+          - not_null
+          - unique
+  - name: dim_timestamp
+    description: Time dimension for trading analytics
+    columns:
+      - name: ts
+        tests:
+          - not_null
+          - unique
+  - name: mart_volume_metrics_1h
+    description: >
+      Hourly volume analytics derived from fact_1h_klines.
+      Provides rolling volume, volume spikes, and VWAP to
+      assess whether price movements are supported by
+      meaningful trading activity.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - coin
+              - open_timestamp
+
+    columns:
+      - name: coin
+        description: Trading pair symbol (e.g., BTCUSDT).
+        tests:
+          - not_null
+
+      - name: open_timestamp
+        description: Hourly candle timestamp (UTC).
+        tests:
+          - not_null
+
+      - name: close_price
+        description: Closing price of the candle.
+        tests:
+          - not_null
+
+      - name: volume
+        description: Base asset volume traded during this hour.
+        tests:
+          - not_null
+
+      - name: rolling_volume_24h
+        description: Total traded volume over the last 24 hours.
+        tests:
+          - not_null
+
+      - name: avg_volume_24h
+        description: Average hourly volume over the last 24 hours.
+        tests:
+          - not_null
+
+      - name: volume_spike_ratio
+        description: >
+          Ratio of current hour volume to the 24-hour average.
+          Values above 2 indicate unusually strong participation.
+        tests:
+          - not_null
+
+      - name: volume_stats
+        description: >
+          Boolean flag indicating whether the current hour
+          experienced a significant volume spike.
+        tests:
+          - not_null
+
+      - name: vwap_24h
+        description: >
+          Volume-weighted average price over the last 24 hours.
+          Represents the price level where most trading occurred.
+        tests:
+          - not_null
+  - name: mart_correlations
+    description: >
+      Rolling 24-hour return correlations between crypto assets.
+      Used to detect hidden risk, diversification effectiveness,
+      and regime changes in market behavior.
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - base_coin
+              - related_coin
+              - open_timestamp
+
+    columns:
+      - name: base_coin
+        description: Primary asset in the correlation pair.
+        tests:
+          - not_null
+
+      - name: related_coin
+        description: Secondary asset being compared.
+        tests:
+          - not_null
+
+      - name: open_timestamp
+        description: Hourly timestamp for the rolling correlation.
+        tests:
+          - not_null
+
+      - name: corr_24h
+        description: >
+          Rolling 24-hour correlation of hourly returns.
+          Values near +1 indicate strong co-movement,
+          values near 0 indicate independence.  
+      - name: correlation_regime
+        description: >
+          Categorizes the strength of the rolling 24-hour correlation between two assets.
+          This provides a simplified, human-readable interpretation of correlation strength
+          for risk analysis and portfolio monitoring.
+
+          Regimes are defined as:
+          - High: Strong relationship (|correlation| ≥ 0.8)
+          - Medium: Moderate relationship (|correlation| ≥ 0.5)
+          - Low: Weak relationship (|correlation| ≥ 0.3)
+          - Uncorrelated: Little to no linear relationship
+
+          Used to identify tightly coupled assets and hidden concentration risk.  
+      - name: corr_breakdown_alerts
+        description: >
+          Flags sudden structural changes in the correlation relationship between two assets.
+          This alert is triggered when the absolute change in rolling 24-hour correlation
+          exceeds 0.5 compared to the previous hour.
+
+          A TRUE value indicates a potential correlation breakdown or regime shift,
+          which can signal market stress, rotation, or emerging diversification opportunities.
+
+          Commonly used in risk monitoring, anomaly detection, and early warning systems.  
+  - name: mart_top_movers
+    description: |
+      This table ranks hourly crypto movers using precomputed returns and rolling volume.
+      It highlights coins with high percentage returns combined with unusual volume.
+    columns:
+      - name: coin
+        description: The trading pair symbol, e.g., BTCUSDT.
+        tests:
+          - not_null
+      - name: open_timestamp
+        description: The timestamp of the 1-hour candle.
+        tests:
+          - not_null
+      - name: return_pct
+        description: Percentage price change from previous candle.
+      - name: log_return
+        description: Logarithmic return from previous candle.
+      - name: rolling_vol_24h
+        description: Sum of volume for the past 24 hours including current candle.
+      - name: volume_spike_ratio
+        description: Ratio of current 24h rolling volume to its rolling average over the last 24 candles.
+      - name: mover_signal
+        description: Absolute return multiplied by volume spike ratio; highlights the largest moves.
+    
+  - name: mart_returns_1h
+    description: >
+      Hourly returns and rolling metrics for all coins. 
+      This table provides both raw and derived return statistics, including percentage returns, log returns, rolling volatility, and volatility regime classification.
+      Used for risk analysis, top movers identification, and correlation studies.
+    columns:
+      - name: coin
+        description: >
+          The symbol of the cryptocurrency (e.g., BTCUSDT). 
+          Used to group and filter metrics per coin.
+        tests:
+          - not_null
+          
+      - name: open_timestamp
+        description: >
+          Start time of the hourly candle (UTC). 
+          Used to order metrics over time and compute rolling statistics.
+        tests:
+          - not_null
+
+      - name: close_price
+        description: >
+          Closing price of the coin at the given hour. 
+          Used as the basis for return calculations and VWAP/volume analyses.
+        tests:
+          - not_null
+
+      - name: prev_close
+        description: >
+          Previous hour's closing price, calculated using `lag(close_price)`. 
+          Needed to calculate percentage returns and log returns.
+       
+
+      - name: return_pct
+        description: >
+          Percentage change in price from the previous hour: 
+          `(close_price - prev_close) / prev_close`. 
+          Common metric to quantify short-term price movement.
+        
+      - name: log_return
+        description: >
+          Logarithmic return: `ln(close_price / prev_close)`. 
+          Useful in financial modeling because log returns are additive over time and handle compounding naturally.
+        
+
+      - name: rolling_vol_24h
+        description: >
+          Rolling standard deviation of `return_pct` over the last 24 hours (including the current hour). 
+          Measures short-term price volatility. Higher values indicate higher risk or potential opportunity.
+        
+      - name: volatility_regime
+        description: >
+          Categorizes the `rolling_vol_24h` into 'High', 'Medium', or 'Low' relative to its recent 24-hour average. 
+          Helps identify periods of unusually high or low volatility.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['High', 'Medium', 'Low']                                 

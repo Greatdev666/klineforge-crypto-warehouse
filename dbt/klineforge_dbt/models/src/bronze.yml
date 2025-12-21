@@ -1,0 +1,8 @@
+version: 2 
+sources:
+  - name: bronze
+    database: CRYPTO_DWH
+    schema: Bronze
+    tables:
+    - name: kline
+      identifier: BINANCE_KLINES_DAILY
