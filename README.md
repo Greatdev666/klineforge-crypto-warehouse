@@ -39,25 +39,25 @@ KlineForge transforms raw Binance spot kline data into a production-ready analyt
 * ​Reliable Orchestration: Schedule and monitor end-to-end pipelines using Dagster to ensure data freshness.
 * ​Enable Intelligence: Provide the clean data layer necessary for downstream BI (Power BI/Streamlit) and quantitative strategy development.
 
----
+  ---
 
 
-## Tech Stack
+    ## Tech Stack
 
-| Layer               | Tool               | Purpose                                 |
-| ------------------- | ------------------ | --------------------------------------- |
-| Data Source         | Binance API        | Raw market (kline) data                 |
-| Ingestion           | Python             | Incremental, checkpoint-based ingestion |
-| Data Warehouse      | Snowflake          | Storage & analytics engine              |
-| Transformation      | dbt (SQL + Jinja)  | Modeling, testing, documentation        |
-| Orchestration       | Dagster            | Asset-based orchestration & scheduling  |
-| CI/CD               | GitHub Actions     | Automated dbt testing & builds          |
-| Visualization       | Power BI (planned) | Analytics & dashboards                  |
-| Architecture Design | Draw.io            | System architecture diagrams            |
-| Development         | VS Code            | Local development environment           |
-| Assistance          | ChatGPT            | Design, debugging, documentation        |
+    | Layer               | Tool               | Purpose                                 |
+    | ------------------- | ------------------ | --------------------------------------- |
+    | Data Source         | Binance API        | Raw market (kline) data                 |
+    | Ingestion           | Python             | Incremental, checkpoint-based ingestion |
+    | Data Warehouse      | Snowflake          | Storage & analytics engine              |
+    | Transformation      | dbt (SQL + Jinja)  | Modeling, testing, documentation        |
+    | Orchestration       | Dagster            | Asset-based orchestration & scheduling  |
+    | CI/CD               | GitHub Actions     | Automated dbt testing & builds          |
+    | Visualization       | Power BI (planned) | Analytics & dashboards                  |
+    | Architecture Design | Draw.io            | System architecture diagrams            |
+    | Development         | VS Code            | Local development environment           |
+    | Assistance          | ChatGPT            | Design, debugging, documentation        |
 
----
+    ---
 
 ## Data Layers & Modeling Strategy
 
