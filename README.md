@@ -18,7 +18,7 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 
 ## Project Overview
 
-KlineForge is an end-to-end crypto analytics data platform designed to ingest, transform, and model high‑frequency cryptocurrency market data into analytics‑ready datasets. The project focuses on **robust incremental ingestion,** **cost‑efficient transformations,** and **pre‑aggregated analytical marts** suitable for risk metrics, quantitative analysi and BI consumption
+KlineForge is an end-to-end crypto analytics data platform designed to ingest, transform, and model high‑frequency cryptocurrency market data into analytics‑ready datasets. The project focuses on **robust incremental ingestion,** **cost‑efficient transformations,** and **pre‑aggregated analytical marts** suitable for risk metrics, quantitative analysis and BI consumption
 
 The pipeline is designed with **production-grade data engineering principles**: incremental processing, idempotency, cost-aware modeling, orchestrating workflows with Dagster, testing, and CI/CD.
 
