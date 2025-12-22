@@ -1,6 +1,11 @@
 # KlineForge – Crypto Analytics Data Warehouse
 A modern, production-grade analytics warehouse transforming raw Binance spot klines into actionable trading intelligence.
 
+[![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
+[![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
+[![Snowflake](https://img.shields.io/badge/Snowflake-blue)](https://snowflake.com)
+[![Dagster](https://img.shields.io/badge/Dagster-1.8+-purple)](https://dagster.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ------------
 ## Architecture Overview
 
@@ -15,11 +20,6 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 
 * Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
 ---
-[![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
-[![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
-[![Snowflake](https://img.shields.io/badge/Snowflake-blue)](https://snowflake.com)
-[![Dagster](https://img.shields.io/badge/Dagster-1.8+-purple)](https://dagster.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Project Overview
 
