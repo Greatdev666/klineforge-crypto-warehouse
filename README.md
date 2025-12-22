@@ -15,6 +15,11 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 
 
 ---
+[![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
+[![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
+[![Snowflake](https://img.shields.io/badge/Snowflake-blue)](https://snowflake.com)
+[![Dagster](https://img.shields.io/badge/Dagster-1.8+-purple)](https://dagster.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Project Overview
 
