@@ -286,6 +286,14 @@ Cross-asset relationship, Risk & diversification analysis.
 Ensures transformations remain correct before deployment.
 
 ---
+## Data Grain
+
+- Fact tables: 1 row per (coin, open_timestamp)
+- Dimensions: One row per entity (coin, timestamp)
+- Marts: Derived at the same hourly grain
+
+
+---
 
 ## Data Quality & Testing
 
@@ -330,6 +338,23 @@ Future dashboards:
 * Deduplication is mandatory for idempotency
 * Grain alignment (hour vs day) is critical
 * Pre-aggregation saves cost and compute
+
+
+
+---
+## Running the Project Locally
+
+1. Clone the repository
+2. Set up Python virtual environment
+3. Configure Snowflake credentials in `profiles.yml`
+4. Run ingestion:
+   python src/ingestion/klines_ingest.py
+5. Run dbt:
+   dbt deps
+   dbt build
+6. Start Dagster:
+   dagster dev
+
 
 ---
 
