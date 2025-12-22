@@ -1,4 +1,4 @@
-from dagster import Definitions
+from dagster import Definitions, in_process_executor
 from dagster_dbt import DbtCliResource
 from .assets import klineforge_dbt_dbt_assets, binance_klines_daily
 from .project import klineforge_dbt_project
@@ -10,4 +10,5 @@ defs = Definitions(
     resources={
         "dbt": DbtCliResource(project_dir=klineforge_dbt_project),
     },
+    executor=in_process_executor,
 )
