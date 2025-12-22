@@ -69,6 +69,7 @@ Store raw Binance kline data with minimal transformation.
 **Key Characteristics:**
 
 * Append-only ingestion
+* Historical backfill for new coins
 * Raw epoch timestamps
 * Ingestion metadata
 * No business logic applied
