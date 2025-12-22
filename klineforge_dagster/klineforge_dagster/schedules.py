@@ -9,10 +9,10 @@ daily_crypto_job = define_asset_job(
     name="daily_crypto_pipeline",
     selection=(
         AssetSelection.keys("binance_klines_daily")
-        | AssetSelection.groups("dbt")
+        | AssetSelection.assets(klineforge_dbt_dbt_assets)
     ),
 )
 daily_schedule = ScheduleDefinition(
     job=daily_crypto_job,
-    cron_schedule="0 7 * * *",
+    cron_schedule="52 7 * * *",
 )
