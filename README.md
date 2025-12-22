@@ -13,7 +13,7 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 
 ![Dagster Live Lineage](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/pipeline_Architecture_Diagrams/Screenshots/Dagster_live_lineage.png)
 
-
+* Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
 ---
 [![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
 [![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
