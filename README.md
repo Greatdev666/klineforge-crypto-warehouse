@@ -9,9 +9,12 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 #### The pipeline follows a medallion architecture: 
  * *Ingestion* (Python) → *Bronze* (raw stage table) → *Silver* (fact_1h_klines) → *Gold* (dim_coins, dim_timestamp) → *Marts* (returns, volume, top movers, correlations) → BI / Analytics(Power BI - upcoming).
 
- * Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
- 
-<video src='https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/pipeline_Architecture_Diagrams/dagster_live_lineage.mp4' controls width="800"></videeo>
+### Dagster Live Lineage (Gold → Silver → Bronze)
+
+[![Dagster Live Lineage](https://github.com/Greatdev666/pipeline_Architecture_Diagrams/dagster_lineage_thumbnail.png)](
+https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/pipeline_Architecture_Diagrams/dagster_live_lineage.mp4
+)
+
 
 ---
 
