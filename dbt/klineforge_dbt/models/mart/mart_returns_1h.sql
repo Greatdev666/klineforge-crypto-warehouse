@@ -91,6 +91,7 @@ volatility_reg as (
             ELSE 'Low'
         END AS volatility_regime
     from volatility
+<<<<<<< HEAD
 ),
 
 rpp as (
@@ -106,3 +107,9 @@ dp as (
 
 select *
 from dp 
+=======
+)
+
+select *
+from volatility_reg
+>>>>>>> d2337f45e5b73ec0fc2d9635bd2b953643fc4642
