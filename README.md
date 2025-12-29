@@ -1,6 +1,11 @@
 # KlineForge – Crypto Analytics Data Warehouse
 A modern, production-grade analytics warehouse transforming raw Binance spot klines into actionable trading intelligence.
 
+[![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
+[![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
+[![Snowflake](https://img.shields.io/badge/Snowflake-blue)](https://snowflake.com)
+[![Dagster](https://img.shields.io/badge/Dagster-1.8+-purple)](https://dagster.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ------------
 ## Architecture Overview
 
@@ -9,18 +14,16 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 #### The pipeline follows a medallion architecture: 
  * *Ingestion* (Python) → *Bronze* (raw stage table) → *Silver* (fact_1h_klines) → *Gold* (dim_coins, dim_timestamp) → *Marts* (returns, volume, top movers, correlations) → BI / Analytics(Power BI - upcoming).
 
-### Dagster Live Lineage (Gold → Silver → Bronze)
+### Dagster Live Lineage (Bronze → Silver → Gold)
 
-[![Dagster Live Lineage](https://github.com/Greatdev666/pipeline_Architecture_Diagrams/dagster_lineage_thumbnail.png)](
-https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/pipeline_Architecture_Diagrams/dagster_live_lineage.mp4
-)
+![Dagster Live Lineage](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/pipeline_Architecture_Diagrams/Screenshots/Dagster_live_lineage.png)
 
-
+* Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
 ---
 
 ## Project Overview
 
-KlineForge is an end-to-end crypto analytics data platform designed to ingest, transform, and model high‑frequency cryptocurrency market data into analytics‑ready datasets. The project focuses on **robust incremental ingestion,** **cost‑efficient transformations,** and **pre‑aggregated analytical marts** suitable for risk metrics, quantitative analysi and BI consumption
+KlineForge is an end-to-end crypto analytics data platform designed to ingest, transform, and model high‑frequency cryptocurrency market data into analytics‑ready datasets. The project focuses on **robust incremental ingestion,** **cost‑efficient transformations,** and **pre‑aggregated analytical marts** suitable for risk metrics, quantitative analysis and BI consumption
 
 The pipeline is designed with **production-grade data engineering principles**: incremental processing, idempotency, cost-aware modeling, orchestrating workflows with Dagster, testing, and CI/CD.
 
@@ -41,25 +44,25 @@ KlineForge transforms raw Binance spot kline data into a production-ready analyt
 * ​Reliable Orchestration: Schedule and monitor end-to-end pipelines using Dagster to ensure data freshness.
 * ​Enable Intelligence: Provide the clean data layer necessary for downstream BI (Power BI/Streamlit) and quantitative strategy development.
 
----
+  ---
 
 
-## Tech Stack
+    ## Tech Stack
 
-| Layer               | Tool               | Purpose                                 |
-| ------------------- | ------------------ | --------------------------------------- |
-| Data Source         | Binance API        | Raw market (kline) data                 |
-| Ingestion           | Python             | Incremental, checkpoint-based ingestion |
-| Data Warehouse      | Snowflake          | Storage & analytics engine              |
-| Transformation      | dbt (SQL + Jinja)  | Modeling, testing, documentation        |
-| Orchestration       | Dagster            | Asset-based orchestration & scheduling  |
-| CI/CD               | GitHub Actions     | Automated dbt testing & builds          |
-| Visualization       | Power BI (planned) | Analytics & dashboards                  |
-| Architecture Design | Draw.io            | System architecture diagrams            |
-| Development         | VS Code            | Local development environment           |
-| Assistance          | ChatGPT            | Design, debugging, documentation        |
+    | Layer               | Tool               | Purpose                                 |
+    | ------------------- | ------------------ | --------------------------------------- |
+    | Data Source         | Binance API        | Raw market (kline) data                 |
+    | Ingestion           | Python             | Incremental, checkpoint-based ingestion |
+    | Data Warehouse      | Snowflake          | Storage & analytics engine              |
+    | Transformation      | dbt (SQL + Jinja)  | Modeling, testing, documentation        |
+    | Orchestration       | Dagster            | Asset-based orchestration & scheduling  |
+    | CI/CD               | GitHub Actions     | Automated dbt testing & builds          |
+    | Visualization       | Power BI (planned) | Analytics & dashboards                  |
+    | Architecture Design | Draw.io            | System architecture diagrams            |
+    | Development         | VS Code            | Local development environment           |
+    | Assistance          | ChatGPT            | Design, debugging, documentation        |
 
----
+    ---
 
 ## Data Layers & Modeling Strategy
 
@@ -71,6 +74,7 @@ Store raw Binance kline data with minimal transformation.
 **Key Characteristics:**
 
 * Append-only ingestion
+* Historical backfill for new coins
 * Raw epoch timestamps
 * Ingestion metadata
 * No business logic applied
