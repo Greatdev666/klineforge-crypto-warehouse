@@ -301,7 +301,6 @@ models:
           - not_null
           - accepted_values:
               arguments:
-<<<<<<< HEAD
                 values: ['High', 'Medium', 'Low']   
       - name: running_peak_price
         description: >
@@ -342,6 +341,3 @@ models:
               arguments:
                 min_value: -1.0
                 max_value: 0.0                              
-=======
-                values: ['High', 'Medium', 'Low']                                 
->>>>>>> d2337f45e5b73ec0fc2d9635bd2b953643fc4642
