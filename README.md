@@ -21,7 +21,7 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 * Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
 ---
 
-## Dashboard Preview (2 0f 5)
+## Dashboard Preview (2 of 5)
 
 ![coin_deep_dive](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Coin_Deep_Dive.png)
 
