@@ -14,9 +14,5 @@ daily_crypto_job = define_asset_job(
 )
 daily_schedule = ScheduleDefinition(
     job=daily_crypto_job,
-<<<<<<< HEAD
-    cron_schedule="24 12 * * *",
-=======
     cron_schedule="0 7 * * *",
->>>>>>> d2337f45e5b73ec0fc2d9635bd2b953643fc4642
 )
