@@ -21,6 +21,16 @@ A modern, production-grade analytics warehouse transforming raw Binance spot kli
 * Orchestrated by Dagster (daily at 7 AM UTC) with GitHub Actions CI/CD for testing on push.
 ---
 
+## Dashboard Preview (2 0f 5)
+
+![coin_deep_dive](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Coin_Deep_Dive.png)
+
+![investment_simulator](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Investment_Simulator.png)
+
+* Full live dashboard live: [klineforge Crypto Dashboard Live](https://github.com/Greatdev666/klineforge-crypto-warehouse/releases/download/dashboards/klineforge_crypto.pbix)
+* Dashboard pdf: [Klineforge Crypto Dashboard PDF](https://github.com/Greatdev666/klineforge-crypto-warehouse/releases/download/dashboards/klineforge_crypto.pdf)
+
+
 ## Project Overview
 
 KlineForge is an end-to-end crypto analytics data platform designed to ingest, transform, and model high‑frequency cryptocurrency market data into analytics‑ready datasets. The project focuses on **robust incremental ingestion,** **cost‑efficient transformations,** and **pre‑aggregated analytical marts** suitable for risk metrics, quantitative analysis and BI consumption
@@ -57,7 +67,7 @@ KlineForge transforms raw Binance spot kline data into a production-ready analyt
     | Transformation      | dbt (SQL + Jinja)  | Modeling, testing, documentation        |
     | Orchestration       | Dagster            | Asset-based orchestration & scheduling  |
     | CI/CD               | GitHub Actions     | Automated dbt testing & builds          |
-    | Visualization       | Power BI (planned) | Analytics & dashboards                  |
+    | Visualization       | Power BI | Analytics & dashboards                  |
     | Architecture Design | Draw.io            | System architecture diagrams            |
     | Development         | VS Code            | Local development environment           |
     | Assistance          | ChatGPT            | Design, debugging, documentation        |
