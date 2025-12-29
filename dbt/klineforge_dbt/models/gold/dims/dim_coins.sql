@@ -7,6 +7,6 @@ select distinct
     'spot'                              as market_type,
     true                                as is_active,
     current_timestamp                   as created_at,
-    interval
+    interval,
     current_timestamp                   as created_at
 from {{ ref('fact_1h_klines') }}
