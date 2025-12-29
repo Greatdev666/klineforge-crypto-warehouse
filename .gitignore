@@ -1,8 +1,23 @@
-# Dagster local state (DO NOT COMMIT)
-klineforge_dagster/.tmp_dagster_home_*/
-**/runs.db
+# Dagster runtime artifacts (NEVER COMMIT)
+klineforge_dagster/.tmp_dagster_home*/
 **/*.db
+**/*.lock
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
 
 # Logs
 logs/
 *.log
+
+# Keys
+*.p8
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
