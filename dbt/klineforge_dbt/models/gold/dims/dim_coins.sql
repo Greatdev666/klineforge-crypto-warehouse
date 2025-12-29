@@ -6,5 +6,6 @@ select distinct
     'USDT'                              as quote_asset, 
     'spot'                              as market_type,
     true                                as is_active,
-    current_timestamp                   as created_at
+    current_timestamp                   as created_at,
+    interval
 from {{ ref('fact_1h_klines') }}

@@ -301,4 +301,43 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['High', 'Medium', 'Low']                                 
+                values: ['High', 'Medium', 'Low']   
+      - name: running_peak_price
+        description: >
+          The highest historical closing price reached by the asset
+          up to and including the current hour.
+          
+          Calculated using a cumulative MAX window function partitioned
+          by coin and ordered by open_timestamp.
+          
+          Used as the reference point for drawdown calculations and
+          long-term risk assessment.
+
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= close_price"
+
+      # ============================
+      # DRAWDOWN PERCENTAGE
+      # ============================
+      - name: drawdown_pct
+        description: >
+          Percentage decline from the asset's historical peak price.
+          
+          Formula:
+            (close_price - running_peak_price) / running_peak_price
+          
+          Values range from 0 (at all-time high) down to -1.0
+          (theoretical total loss).
+          
+          Used to quantify downside risk, worst-case losses, and
+          portfolio stress scenarios.
+
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -1.0
+                max_value: 0.0                              

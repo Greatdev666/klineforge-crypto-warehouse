@@ -1,0 +1,116 @@
+{
+    "name": "KlineForge Institutional Crypto Dark – Readable",
+
+    "dataColors": [
+        "#FFD54F",
+        "#00E676",
+        "#FF5252",
+        "#40C4FF",
+        "#B388FF",
+        "#1DE9B6",
+        "#FF8A65",
+        "#90A4AE"
+    ],
+
+    "background": "#0B0F14",
+    "foreground": "#F0F6FC",
+    "tableAccent": "#FFD54F",
+
+    "visualStyles": {
+        "*": {
+            "*": {
+                "background": [
+                    {
+                        "show": true,
+                        "color": { "solid": { "color": "#0D1117" } },
+                        "transparency": 0
+                    }
+                ],
+                "border": [
+                    {
+                        "show": true,
+                        "color": { "solid": { "color": "#1F2933" } },
+                        "radius": 12
+                    }
+                ],
+                "visualTooltip": [
+                    {
+                        "type": "Default",
+                        "titleFontColor": { "solid": { "color": "#F0F6FC" } },
+                        "valueFontColor": { "solid": { "color": "#FFD54F" } },
+                        "background": { "solid": { "color": "#161B22" } }
+                    }
+                ],
+                "outspacePane": [
+                    {
+                        "backgroundColor": { "solid": { "color": "#0B0F14" } },
+                        "foregroundColor": { "solid": { "color": "#F0F6FC" } }
+                    }
+                ]
+            }
+        },
+
+        "card": {
+            "*": {
+                "labels": [
+                    {
+                        "color": { "solid": { "color": "#D0D7DE" } },
+                        "fontSize": 11
+                    }
+                ],
+                "categoryLabels": [
+                    {
+                        "color": { "solid": { "color": "#D0D7DE" } }
+                    }
+                ],
+                "calloutValue": [
+                    {
+                        "color": { "solid": { "color": "#00E676" } },
+                        "fontSize": 28,
+                        "fontFamily": "Segoe UI Semibold"
+                    }
+                ]
+            }
+        },
+
+        "table": {
+            "*": {
+                "columnHeaders": [
+                    {
+                        "color": { "solid": { "color": "#F0F6FC" } },
+                        "fontSize": 11,
+                        "background": { "solid": { "color": "#161B22" } }
+                    }
+                ],
+                "values": [
+                    {
+                        "color": { "solid": { "color": "#D0D7DE" } },
+                        "fontSize": 10
+                    }
+                ]
+            }
+        }
+    },
+
+    "textClasses": {
+        "label": {
+            "color": "#9DA7B3",
+            "fontSize": 11,
+            "fontFace": "Segoe UI"
+        },
+        "callout": {
+            "color": "#00E676",
+            "fontSize": 28,
+            "fontFace": "Segoe UI Semibold"
+        },
+        "title": {
+            "color": "#F0F6FC",
+            "fontSize": 14,
+            "fontFace": "Segoe UI Semibold"
+        },
+        "header": {
+            "color": "#F0F6FC",
+            "fontFace": "Segoe UI Semibold"
+        }
+    }
+}

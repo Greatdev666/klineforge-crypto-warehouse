@@ -91,7 +91,18 @@ volatility_reg as (
             ELSE 'Low'
         END AS volatility_regime
     from volatility
+),
+
+rpp as (
+    SELECT *,
+        Max(close_price) OVER(PARTITION BY coin ORDER BY open_timestamp ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as running_peak_price
+    FROM volatility_reg
+),
+dp as (
+    SELECT *,
+        (close_price - running_peak_price) / NULLIF(running_peak_price, 0) AS drawdown_pct
+    FROM rpp
 )
 
 select *
-from volatility_reg
+from dp 

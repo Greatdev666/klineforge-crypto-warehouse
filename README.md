@@ -311,17 +311,22 @@ Ensures trust in analytical outputs.
 
 ---
 
-## Power BI (Planned)
+## Analytics & Dashboards
 
-**Status:** Placeholder
+KlineForge includes a fully documented analytics suite built on top of curated warehouse models.
 
-Future dashboards:
+The dashboards translate raw crypto market data into:
+- Market regime awareness
+- Asset-level behavioral insights
+- Cross-asset risk visibility
+- Investment outcome simulation
 
-* Returns & volatility analysis
-* Volume anomalies
-* Correlation heatmaps
-* Session-based trading insights
-* Risk & Portfolio Management
+All metrics are pre-computed in dbt marts to ensure:
+- Consistency across views
+- Fast query performance
+- Transparent business logic
+
+📊 Dashboard documentation and exports can be found in the [`/dashboards`](./dashboards) directory.
 
 ---
 
