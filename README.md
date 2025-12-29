@@ -263,6 +263,24 @@ Cross-asset relationship, Risk & diversification analysis.
 
 ---
 
+## Analytics & Dashboards
+
+KlineForge includes a fully documented analytics suite built on top of curated warehouse models.
+
+The dashboards translate raw crypto market data into:
+- Market regime awareness
+- Asset-level behavioral insights
+- Cross-asset risk visibility
+- Investment outcome simulation
+
+All metrics are pre-computed in dbt marts to ensure:
+- Consistency across views
+- Fast query performance
+- Transparent business logic
+
+📊 Dashboard documentation and exports can be found in the [`/dashboards`](./dashboards) directory.
+
+
 ## Orchestration – Dagster
 
 **Why Dagster:**
