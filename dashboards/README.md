@@ -19,6 +19,8 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 ## Dashboard Suite
 
 ### 01 — Market Pulse
+![Market Pulse](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Maket_Pulse.png)
+
 **Purpose:** High-level market orientation and directional awareness.
 
 **Answers:**
@@ -32,11 +34,13 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 - Correlation pressure
 - Price-driven mover signal
 
-📄 Detailed documentation → [`README_Market_Pulse.md`](../readme/README_Market_Pulse.md)
+📄 Detailed documentation → [`README_Market_Pulse.md`](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/README/Market_Pulse.md)
 
 ---
 
 ### 02 — Coin Deep Dive
+![Coin Deep Dive](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Coin_Deep_Dive.png)
+
 **Purpose:** Asset-level behavioral analysis.
 
 **Answers:**
@@ -50,11 +54,13 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 - VWAP & price deviation
 - Trend persistence
 
-📄 Detailed documentation → [`README_Coin_Deep_Dive.md`](../readme/README_Coin_Deep_Dive.md)
+📄 Detailed documentation → [`README_Coin_Deep_Dive.md`](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/README/Coin_Deep_Dive.md)
 
 ---
 
 ### 03 — Correlation & Portfolio
+![Correlation & Portfolio](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Correlation.png)
+
 **Purpose:** Cross-asset relationship and diversification analysis.
 
 **Answers:**
@@ -67,11 +73,13 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 - Correlation clustering
 - Portfolio concentration indicators
 
-📄 Detailed documentation → [`README_Correlation_Portfolio.md`](../readme/README_Correlation_Portfolio.md)
+📄 Detailed documentation → [`README_Correlation_Portfolio.md`](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/README/Correlation_and_Portfolio.md)
 
 ---
 
 ### 04 — Risk Management
+![Risk Management](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Risk_Management.png)
+
 **Purpose:** Downside exposure and loss concentration awareness.
 
 **Answers:**
@@ -85,11 +93,13 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 - Volatility regime
 - Risk state classification
 
-📄 Detailed documentation → [`README_Risk_Management.md`](../readme/README_Risk_Management.md)
+📄 Detailed documentation → [`README_Risk_Management.md`](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/README/Risk_Management.md)
 
 ---
 
 ### 05 — Investment Outcome Simulator
+![Investment Outcome Simulator](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/screeshots/Investment_Simulator.png)
+
 **Purpose:** What-if investing and hindsight-based outcome exploration.
 
 **Answers:**
@@ -103,7 +113,7 @@ All dashboards are powered by curated **Gold & Mart models**, ensuring metrics a
 - Return %
 - Portfolio value & drawdown over time
 
-📄 Detailed documentation → [`README_Investment_Simulator.md`](../readme/README_Investment_Simulator.md)
+📄 Detailed documentation → [`README_Investment_Simulator.md`](https://github.com/Greatdev666/klineforge-crypto-warehouse/blob/main/dashboards/README/Investment_Simulator.md)
 
 ---
 

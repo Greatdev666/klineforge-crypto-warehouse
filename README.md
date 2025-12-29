@@ -1,5 +1,5 @@
 # KlineForge – Crypto Analytics Data Warehouse
-A modern, production-grade analytics warehouse transforming raw Binance spot klines into actionable trading intelligence.
+KlineForge is a production-grade crypto analytics warehouse that transforms raw Binance klines into trustable, pre-aggregated analytics ready for BI, risk analysis, and exploration.
 
 [![GitHub stars](https://img.shields.io/github/stars/Greatdev666/klineforge-crypto-warehouse?style=social)](https://github.com/Greatdev666/klineforge-crypto-warehouse/stargazers)
 [![dbt version](https://img.shields.io/badge/dbt-1.5+-orange)](https://getdbt.com)
