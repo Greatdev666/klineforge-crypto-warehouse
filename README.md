@@ -299,7 +299,6 @@ Ensures transformations remain correct before deployment.
 - Dimensions: One row per entity (coin, timestamp)
 - Marts: Derived at the same hourly grain
 
-
 ---
 
 ## Data Quality & Testing
@@ -309,7 +308,7 @@ Implemented using dbt `schema.yml`:
 * Not null tests
 * Unique constraints
 * Accepted values
-* Relationship tests
+* Relationship tests 
 
 Ensures trust in analytical outputs.
 
