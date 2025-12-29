@@ -1,0 +1,8 @@
+# Dagster local state (DO NOT COMMIT)
+klineforge_dagster/.tmp_dagster_home_*/
+**/runs.db
+**/*.db
+
+# Logs
+logs/
+*.log
